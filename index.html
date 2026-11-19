@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nurislom co-working — Zamonaviy Ish va IT Makoni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #273549;
+      --accent: #34d399;
+      --accent-dark: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(148, 163, 184, 0.16);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #06281e;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      margin-top: 16px;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #06281e;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 80px 24px 64px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .typewriter-wrap {
+      display: inline-block;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      color: var(--accent);
+      font-weight: 500;
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3.5s steps(36, end) forwards, blink 0.8s infinite;
+      margin-bottom: 24px;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin: 0 auto 32px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-banner {
+      max-width: 960px;
+      margin: 36px auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-banner img {
+      display: block;
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+    }
+
+    .section-header h2 span {
+      color: var(--accent);
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Cards & Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Pricing / Tariflar */
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px rgba(52, 211, 153, 0.12);
+    }
+
+    .price-tag {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 12px 0 16px;
+    }
+
+    .price-tag span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .features-list li {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .features-list li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Schedule Table */
+    .table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: rgba(52, 211, 153, 0.08);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    td {
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Nurislom <span>co-working</span></a>
+      <nav>
+        <ul>
+          <li><a href="#imkoniyatlar">Imkoniyatlar</a></li>
+          <li><a href="#tariflar">Tariflar</a></li>
+          <li><a href="#jadval">Jadval</a></li>
+          <li><a href="#ustoz">Ustoz</a></li>
+          <li><a href="#aloqa">Aloqa</a></li>
+        </ul>
+      </nav>
+      <a href="#tariflar" class="btn">Joy band qilish</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div class="badge">nurislom _working • IT &amp; Co-working Space</div>
+      <h1>Nurislom co-working</h1>
+      <div>
+        <span class="typewriter-wrap">Kod yozish, g‘oyalar va jamoaviy o‘sish makoni</span>
+      </div>
+      <p>
+        Dasturchilar, loyiha mualliflari va o‘rganuvchilar uchun qulay ish muhiti,
+        dars jadvali, mentorlik yordami va amaliy mashg‘ulotlar maydoni.
+      </p>
+      <a href="#tariflar" class="btn">Tariflarni ko‘rish</a>
+
+      <div class="hero-banner">
+        <img src="image.png" alt="Nurislom co-working ish maydoni" />
+      </div>
+    </section>
+
+    <section id="imkoniyatlar" class="reveal">
+      <div class="section-header">
+        <h2>Bizning <span>Imkoniyatlar</span></h2>
+        <p>Samarali ishlash va o‘rganish uchun yaratilgan muhit</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Tezkor Ish Hududi</h3>
+          <p>Barqaror internet, qulay stol-stullar va kodlash hamda loyihalar ustida ishlash uchun sokin zona.</p>
+        </div>
+        <div class="card">
+          <h3>Amaliy Mashg‘ulotlar</h3>
+          <p>Web dasturlash, loyiha tuzish, Git/GitHub va taqdimot (pitch) ko‘nikmalarini mustahkamlash.</p>
+        </div>
+        <div class="card">
+          <h3>Hamjamiyat &amp; Demo</h3>
+          <p>Hamfikrlar bilan tajriba almashish, yangi g‘oyalarni sinash va loyihalarni namoyish etish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tariflar" class="reveal">
+      <div class="section-header">
+        <h2>Qulay <span>Tariflar</span></h2>
+        <p>Ehtiyojingiz va ish grafigingizga mos tarifni tanlang</p>
+      </div>
+      <div class="grid-3">
+        <div class="card price-card">
+          <div>
+            <h3>Kunlik Pass</h3>
+            <p>Bir martalik ish yoki amaliyot kuni uchun</p>
+            <div class="price-tag">35 000 so‘m <span>/ kun</span></div>
+            <ul class="features-list">
+              <li>Tezkor internet va ish stoli</li>
+              <li>Mustaqil kodlash zonasi</li>
+              <li>Demo va muhokamalarda qatnashish</li>
+            </ul>
+          </div>
+          <a href="#aloqa" class="btn-outline">Tanlash</a>
+        </div>
+
+        <div class="card price-card featured">
+          <div>
+            <h3>IT &amp; Amaliyot (Asosiy)</h3>
+            <p>Muntazam o‘rganish va loyiha yig‘ish uchun</p>
+            <div class="price-tag">250 000 so‘m <span>/ oy</span></div>
+            <ul class="features-list">
+              <li>09:00 – 10:30 dars va amaliy mashg‘ulotlar</li>
+              <li>Ustoz maslahati va code review</li>
+              <li>GitHub va portfolio bo‘yicha yo‘l-yo‘riq</li>
+            </ul>
+          </div>
+          <a href="#aloqa" class="btn">Hoziroq boshlash</a>
+        </div>
+
+        <div class="card price-card">
+          <div>
+            <h3>Doimiy Rezident</h3>
+            <p>Doimiy joy va loyiha ustida to‘liq ishlash uchun</p>
+            <div class="price-tag">450 000 so‘m <span>/ oy</span></div>
+            <ul class="features-list">
+              <li>Belgilangan ish joyi va jadvalga erkin kirish</li>
+              <li>Pitch va jamoaviy loyiha sessiyalari</li>
+              <li>Shaxsiy loyihani taqdim etish imkoniyati</li>
+            </ul>
+          </div>
+          <a href="#aloqa" class="btn-outline">Tanlash</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="jadval" class="reveal">
+      <div class="section-header">
+        <h2>Dars va Ish <span>Jadvali</span></h2>
+        <p>Haftalik asosiy mashg‘ulot va amaliyot vaqtlari</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kunlar</th>
+              <th>Vaqt</th>
+              <th>Yo‘nalish / Sessiya</th>
+              <th>Holat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dushanba — Chorshanba — Juma</td>
+              <td>09:00 – 10:30</td>
+              <td>IT kurs &amp; Web amaliyot (to'garagi IT)</td>
+              <td>Faol</td>
+            </tr>
+            <tr>
+              <td>Seshanba — Payshanba</td>
+              <td>11:00 – 14:00</td>
+              <td>Mustaqil kodlash &amp; loyiha ustida ishlash</td>
+              <td>Ochiq</td>
+            </tr>
+            <tr>
+              <td>Shanba</td>
+              <td>10:00 – 13:00</td>
+              <td>Code review, Pitch &amp; jamoaviy muhokama</td>
+              <td>Rejalashtirilgan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ustoz" class="reveal">
+      <div class="section-header">
+        <h2><span>Ustoz</span> va Yo‘naltiruv</h2>
+        <p>Loyihalar va o‘quv jarayonida qo‘llab-quvvatlash</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Mentorlik Yordami</h3>
+          <p>HTML, CSS, loyiha arxitekturasi va xatolarni tahlil qilish bo‘yicha amaliy maslahatlar.</p>
+        </div>
+        <div class="card">
+          <h3>Loyiha Tayyorlash</h3>
+          <p>G‘oyadan tayyor sahifa va taqdimotgacha bosqichma-bosqich yo‘nalish berish.</p>
+        </div>
+        <div class="card">
+          <h3>Portfolio Rivoji</h3>
+          <p>GitHub va jonli sahifalar orqali shaxsiy portfolioni boyitishga ko‘maklashish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="aloqa" class="reveal">
+      <div class="section-header">
+        <h2>Aloqa va <span>Manzil</span></h2>
+        <p>Biz bilan bog‘laning yoki joyida tashrif buyuring</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Manzil</h3>
+          <p>chilonzor krug 3-tor ko'cha, Toshkent</p>
+        </div>
+        <div class="card">
+          <h3>Loyiha Nomi</h3>
+          <p>Nurislom co-working (nurislom _working)</p>
+        </div>
+        <div class="card">
+          <h3>Ish Rejimi</h3>
+          <p>Ertalabki darslar 09:00 da boshlanadi, kunduzgi sessiyalar jadval asosida.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 <span>Nurislom co-working</span> — Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
